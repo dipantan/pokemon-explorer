@@ -31,7 +31,6 @@ export async function fetchPokemonList(
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching pokemon list:", error);
     return { results: [], count: 0 };
   }
 }
@@ -46,7 +45,6 @@ export async function fetchPokemonDetails(
     if (!response.ok) throw new Error(`Failed to fetch pokemon with id ${id}`);
     return response.json();
   } catch (error) {
-    console.error("Error fetching pokemon details:", error);
     return null;
   }
 }
@@ -63,7 +61,6 @@ export async function searchPokemon(query: string): Promise<PokemonListItem[]> {
       pokemon.name.toLowerCase().includes(query.toLowerCase())
     );
   } catch (error) {
-    console.error("Error searching pokemon:", error);
     return [];
   }
 }

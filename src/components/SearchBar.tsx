@@ -22,7 +22,6 @@ export default function SearchBar() {
   });
 
   const handleOpenModal = () => {
-    console.log("Opening modal");
     setIsModalOpen(true);
   };
 
